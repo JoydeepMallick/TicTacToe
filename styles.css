@@ -1,0 +1,131 @@
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Nabla&family=Poor+Story&display=swap');
+  * {
+  margin: 0;
+  padding: 0;
+  }
+
+  body{
+  background-color: #c5f58f;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  overflow: hidden;
+  }
+
+  nav {
+  background-color: #2e3096;
+  color: #ffffff;
+  height: 62px;
+  font-size: 27px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-family: 'Nabla', cursive;
+  }
+
+  nav ul {
+  list-style-type: none;
+  }
+
+  .gameContainer{
+    display: flex;
+    justify-content: center;  
+  }
+
+  .container{
+  /* all X will be displayed in grid layout in group of 3 per row */
+  display : grid;
+  /* left right distance between adjacent Xs */
+  grid-template-columns: repeat(3, 12vw);
+  /* up down distance between adjacent Xs */
+  grid-template-rows: repeat(3, 12vw);
+  font-family: 'Caveat', cursive;
+  padding: 3%;
+  position: relative;
+  }
+
+  .box{
+  /* drawing borders around the grid */
+  border: 0.3vw solid black;
+  font-size: 5vw;/*vw helps in keeping it responsive*/
+  /* make the cursor pointer whenever some hovers over */
+  cursor: pointer;
+
+  /* make the content positioned to center within grid */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .box:hover{
+  background-color: rgb(137, 214, 191);
+  }
+
+  .info{
+  font-size: 35px;
+  transition: font-size 0.2s ease;
+  }
+
+  .gameInfo{
+  padding: 0 16px;
+  font-family: 'Poor Story', cursive;
+  }
+
+  .gameInfo h1{
+  font-size: 2.8rem;
+    padding: 13% 0;
+  }
+
+  .imgbox img{
+  /* display : none; */
+  width : 0;
+  /* change in size must be done in an animated way */
+  transition: width ease-in-out;
+  }
+
+  /* since our grid border is closed, to give it a feel of tic tac toe we need to remove all outer borders, below classes define the same and we will place them carefully in  each div class box for each position*/
+  .bt-0{
+  border-top: 0;
+  }
+
+  .bb-0{
+  border-bottom: 0;
+  }
+
+  .bl-0{
+  border-left: 0;
+  }
+
+  .br-0{
+  border-right: 0;
+  }
+
+  span.boxtext{
+  font-size: 150%;
+  }
+
+  #reset{
+  display: block;
+  margin: 10px 5px;
+  padding: 0px 15px;
+  background-color: rgb(245, 245, 144);
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: 'Caveat', cursive;
+  font-size: 50px;
+  }
+
+  .line{
+    background-color: #26299d;
+    border-radius: 30px;
+    height: 0vw; /*initally hidden*/
+    width: 40vw;
+    position: absolute;
+  /* transform: rotate(90deg); */
+  }
+
+  @media screen and (max-width: 1200px){
+  .gameContainer{
+    flex-wrap: wrap;/*beyond 810px content can wrap up and below to fit screen*/
+  }
+  }
